@@ -1,26 +1,26 @@
+// App.tsx
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Navbar from './components/Menu'; // Asegúrate de importar el nombre correcto del componente
+import InfoComponent from './page/Info';
+import HabitacionesContainer from './components/habitacionescontainer';
+import Contactos from './page/contactos';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar /> {/* Coloca el Navbar en la posición deseada */}
+        <Routes>
+          <Route path="/" element={<InfoComponent />} />
+          <Route path="/habitaciones" element={<HabitacionesContainer />} />
+          <Route path="/contactos" element={<Contactos />} />
+          <Route path="/*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
