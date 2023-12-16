@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: linear-gradient(#fff78e, #b9a853); 
+  background: radial-gradient(circle, #aef198, #0a4b01); /* Usamos radial-gradient */
   min-height: 100vh;
-  padding: 20px; /* Añade algún relleno para evitar que el contenido toque los bordes */
+  padding: 19px; /* Añade algún relleno para evitar que el contenido toque los bordes */
   backdrop-filter: blur(10px); /* Agrega el difuminado */
 }
 .CardImage {

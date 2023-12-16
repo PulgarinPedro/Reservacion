@@ -35,11 +35,12 @@ const HabitacionCard: React.FC<HabitacionCardProps> = ({ habitacion, onReservarC
     setModalVisible(false);
   };
 
+ 
   return (
     <Card
       hoverable
       style={{
-        width: '96%', // Ajusta este valor para cambiar la anchura de la tarjeta
+        width: '85%', // Ajusta este valor para cambiar la anchura de la tarjeta
         margin: '16px 0', // Añade un poco de margen arriba y abajo
         marginLeft: '1%', // Ajusta el margen izquierdo
       }}
@@ -48,10 +49,10 @@ const HabitacionCard: React.FC<HabitacionCardProps> = ({ habitacion, onReservarC
         <img
           alt={habitacion.nombreHabitacion}
           src={habitacion.imagenUrl}
-          style={{ height: '200px', width: '200px', objectFit: 'cover', marginRight: '16px' }}
+          style={{ height: '300px', width: '400px', objectFit: 'cover', marginRight: '16px' }}
         />
-        <div style={{ textAlign: 'left', padding: '16px' }}>
-          <h3 style={{ fontSize: '24px', marginBottom: '8px' }}>{habitacion.nombreHabitacion}</h3>
+        <div style={{ textAlign: 'left', padding: '16px', marginLeft: '300px' }}>
+          <h3 style={{ fontSize: '40px', marginBottom: '8px' }}>{habitacion.nombreHabitacion}</h3>
           <p><strong>Descripción:</strong> {habitacion.descripcion}</p>
           <p><strong>Capacidad:</strong> {habitacion.capacidad} personas</p>
           <p><strong>Disponibilidad:</strong> {habitacion.disponible ? 'Disponible' : 'No disponible'}</p>

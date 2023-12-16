@@ -1,4 +1,4 @@
-// HabitacionesContainer.tsx
+/* HabitacionesContainer.tsx
 
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'antd';
@@ -51,7 +51,7 @@ const HabitacionesContainer: React.FC = () => {
         <HabitacionCard
           key={habitacion.habitacionid}
           habitacion={habitacion}
-          onReservarClick={handleReservarClick}
+       //   onReservarClick={handleReservarClick}
         />
       ))}
       <Modal
@@ -73,3 +73,4 @@ const HabitacionesContainer: React.FC = () => {
 };
 
 export default HabitacionesContainer;
+*/

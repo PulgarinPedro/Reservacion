@@ -6,7 +6,7 @@ import imagen from '../imagenes/fondo.jpeg';
 import logo from '../imagenes/logo.png';
 import '../components/info.css';
 import imgCapilla from '../imagenes/parrafo.png';
-import ModalDetalleComponent from './infodetalle'; 
+import ModalDetalleComponent from '../components/infodetalle'; 
 
 import imgDetalle1 from '../imagenes/parrafo.png';  // Ruta de la imagen de detalle 1
 import imgDetalle2 from '../imagenes/parrafo.png';  // Ruta de la imagen de detalle 2
