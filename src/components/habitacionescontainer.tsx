@@ -1,9 +1,7 @@
-/* HabitacionesContainer.tsx
-
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'antd';
 import HabitacionCard from './habitacioncard';
-import './habitaciones.css'; // Importa tu archivo de estilos
+import '../styles/habitaciones.css'; // Importa tu archivo de estilos
 
 interface Habitacion {
   habitacionid: number;
@@ -46,31 +44,38 @@ const HabitacionesContainer: React.FC = () => {
   };
 
   return (
-    <div className="habitaciones-container">
-      {habitaciones.map(habitacion => (
-        <HabitacionCard
-          key={habitacion.habitacionid}
-          habitacion={habitacion}
-       //   onReservarClick={handleReservarClick}
-        />
-      ))}
-      <Modal
-        title={selectedRoom ? `Detalles de ${selectedRoom.nombreHabitacion}` : ''}
-        visible={modalVisible}
-        onCancel={handleModalCancel}
-        footer={null}
-      >
-        {selectedRoom && (
-          <div>
-            <p><strong>Descripción:</strong> {selectedRoom.descripcion}</p>
-            <p><strong>Capacidad:</strong> {selectedRoom.capacidad} personas</p>
-            <p><strong>Disponibilidad:</strong> {selectedRoom.disponible ? 'Disponible' : 'No disponible'}</p>
-          </div>
-        )}
-      </Modal>
+    <div>
+      <div className="habitaciones-container">
+        {habitaciones.map(habitacion => (
+          <HabitacionCard
+            key={habitacion.habitacionid}
+            habitacion={habitacion}
+            onReservarClick={handleReservarClick}
+          />
+        ))}
+        <Modal
+          title={selectedRoom ? `Detalles de ${selectedRoom.nombreHabitacion}` : ''}
+          visible={modalVisible}
+          onCancel={handleModalCancel}
+          footer={null}
+        >
+          {selectedRoom && (
+            <div>
+              <p><strong>Descripción:</strong> {selectedRoom.descripcion}</p>
+              <p><strong>Capacidad:</strong> {selectedRoom.capacidad} personas</p>
+              <p><strong>Disponibilidad:</strong> {selectedRoom.disponible ? 'Disponible' : 'No disponible'}</p>
+            </div>
+          )}
+        </Modal>
+      </div>
+
+      {/* Pie de página */}
+      <div style={{ backgroundColor: '#333', color: '#fff', textAlign: 'center', padding: '20px' }}>
+        <p style={{ margin: '0', fontSize: '1.2em' }}>Hostería Capillapamba</p>
+        <p style={{ margin: '0', fontSize: '0.9em' }}>Copyright © 2023, Creado por [Pedro Pulgarin y Steven Fernandez]</p>
+      </div>
     </div>
-  );
+  )
 };
 
 export default HabitacionesContainer;
-*/

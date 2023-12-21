@@ -1,8 +1,7 @@
 // HabitacionCard.tsx
-
 import React, { useState } from 'react';
 import { Card, Button, Modal } from 'antd';
-import ReservaFormulario from '../page/reservaciones';
+import ModalAddReservation, { ModalAddReservationProps } from './ModalAddReservation';
 
 interface Habitacion {
   habitacionid: number;
@@ -35,40 +34,46 @@ const HabitacionCard: React.FC<HabitacionCardProps> = ({ habitacion, onReservarC
     setModalVisible(false);
   };
 
- 
+  const handleAddReservationSuccess = () => {
+    console.log('Reserva agregada con éxito');
+  };
+
+  const modalAddReservationProps: ModalAddReservationProps = {
+    visible: modalVisible,
+    onCancel: handleReservaFormCancel,
+    onAddSuccess: handleAddReservationSuccess,
+    habitacionid: habitacion.habitacionid,
+  };
+
   return (
     <Card
       hoverable
       style={{
-        width: '85%', // Ajusta este valor para cambiar la anchura de la tarjeta
-        margin: '16px 0', // Añade un poco de margen arriba y abajo
-        marginLeft: '1%', // Ajusta el margen izquierdo
+        width: '87%',
+        margin: '16px 0',
+        marginLeft: '1%',
+        fontFamily: 'Pacifico, sans-serif', // Establece el tipo de letra aquí
       }}
     >
       <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <img
-          alt={habitacion.nombreHabitacion}
-          src={habitacion.imagenUrl}
-          style={{ height: '300px', width: '400px', objectFit: 'cover', marginRight: '16px' }}
-        />
-        <div style={{ textAlign: 'left', padding: '16px', marginLeft: '300px' }}>
+        <div>
+          <img
+            alt={habitacion.nombreHabitacion}
+            src={habitacion.imagenUrl}
+            style={{ height: '300px', width: '400px', objectFit: 'cover', marginLeft: '110px' }}
+          />
+        </div>
+        <div style={{ textAlign: 'left', marginLeft: '189px', width: '50%', fontFamily: 'Lato, sans-serif' }}>
           <h3 style={{ fontSize: '40px', marginBottom: '8px' }}>{habitacion.nombreHabitacion}</h3>
-          <p><strong>Descripción:</strong> {habitacion.descripcion}</p>
-          <p><strong>Capacidad:</strong> {habitacion.capacidad} personas</p>
-          <p><strong>Disponibilidad:</strong> {habitacion.disponible ? 'Disponible' : 'No disponible'}</p>
-          <Button type="primary" style={{ background: 'black', border: '1px solid black' }} onClick={handleReservarClick}>
+          <p style={{ fontSize: '16px' }}><strong>Descripción:</strong> {habitacion.descripcion}</p>
+          <p style={{ fontSize: '16px' }}><strong>Capacidad:</strong> {habitacion.capacidad} personas</p>
+          <p style={{ fontSize: '16px' }}><strong>Disponibilidad:</strong> {habitacion.disponible ? 'Disponible' : 'No disponible'}</p>
+          <Button type="primary" style={{ background: 'rgb(35, 46, 58)', border: '1px solid black' }} onClick={handleReservarClick}>
             Reservar
           </Button>
         </div>
       </div>
-      <Modal
-        title={`Reservar ${habitacion.nombreHabitacion}`}
-        visible={modalVisible}
-        onCancel={handleReservaFormCancel}
-        footer={null}
-      >
-        <ReservaFormulario onFinish={handleReservaFormFinish} onCancel={handleReservaFormCancel} />
-      </Modal>
+      <ModalAddReservation {...modalAddReservationProps} />
     </Card>
   );
 };
