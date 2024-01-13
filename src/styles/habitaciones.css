@@ -8,22 +8,21 @@
   padding: 19px; /* Añade algún relleno para evitar que el contenido toque los bordes */
   backdrop-filter: blur(10px); /* Agrega el difuminado */
 }
-.CardImage {
-  position: relative;
+
+.habitacion-card {
+  width: 100%; /* Ajusta el ancho para ocupar toda la pantalla */
+  margin-bottom: 16px; /* Añade margen inferior para separar las tarjetas */
 }
 
-.CardImage:hover .GreenOverlay {
-  opacity: 1;
+.habitacion-card img {
+  width: 100%; /* Ajusta el ancho de la imagen para ocupar toda la pantalla */
+  height: 200px; /* Ajusta la altura de manera fija */
+  object-fit: cover; /* Ajusta el comportamiento de la imagen para cubrir el contenedor */
 }
 
-  .SmallImage {
-    max-width: 200px; /* Ajusta el tamaño según tus necesidades */
-    max-height: 200px; /* Ajusta el tamaño según tus necesidades */
+/* Agrega media queries al final de tu archivo de estilos */
+@media (max-width: 767px) {
+  .habitaciones-container {
+    padding: 10px; /* Ajusta el relleno para dispositivos móviles */
   }
-  
-  .CardImage img {
-    width: 265px;
-    height: 265px;
-    
-  }
-  
+}

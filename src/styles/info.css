@@ -28,20 +28,20 @@
   
   .logo {
     position: absolute;
-    top: -190px; /* Ajusta la posición vertical del logo según tus necesidades */
+    top: -120px; /* Ajusta la posición vertical del logo según tus necesidades */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* Asegúrate de que el logo esté por encima del texto y la imagen */
-    width: 190px; /* Ajusta el ancho del logo */
-    height: 190px; /* Ajusta la altura del logo */
+    width: 140px; /* Ajusta el ancho del logo */
+    height: 140px; /* Ajusta la altura del logo */
   }
 
   #capillapamba {
-    margin-bottom: 10px; /* Ajusta la separación vertical entre "Capillapamba" y la frase */
+    margin-bottom: -90px; /* Ajusta la separación vertical entre "Capillapamba" y la frase */
   }
   
   #frase {
-    margin-top: 20px; /* Ajusta la separación vertical entre la frase y el botón */
+    margin-top: 110px; /* Ajusta la separación vertical entre la frase y el botón */
   }
   
   .ant-btn {
@@ -56,7 +56,7 @@
   
   .boton-settings {
     margin-top: 20px;
-    background-color: #3498db;
+    background-color: #05a71d;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -64,28 +64,7 @@
     cursor: pointer;
   }
   
-  .boton-empezar {
-    margin-top: 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .custom-header {
-    background: #1890ff;
-    padding: 0 20px;
-    border-bottom: 1px solid #fff;
-  }
-  
-  .custom-menu {
-    background: none;
-    border: none;
-    display: flex;
-    justify-content: flex-start;
-  }
+
   
   .custom-menu-item {
     color: #fff;
@@ -122,4 +101,30 @@
     overflow: auto;
   }
 
+  .main-title {
+    font-family: 'Pacifico, sans-serif';
+    font-size: 1.6em;
+    font-style: italic;
+    color: #ffffff;
+    z-index: 2;
+    margin-top: 10px; /* Ajusta según sea necesario */
+  }
   
+  .sub-title {
+    font-family: 'Poppins, sans-serif';
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #ffffff;
+    z-index: 2;
+    margin-top: 10px; /* Ajusta según sea necesario */
+  }
+  
+  .start-button {
+    background-color: #006400;
+    border-color: #006400;
+    font-family: 'Verdana';
+    font-size: 1.1em;
+    font-weight: bold;
+    z-index: 2;
+    margin-top: 40px; /* Ajusta según sea necesario */
+  }

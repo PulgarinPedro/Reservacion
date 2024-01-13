@@ -10,6 +10,28 @@ interface ModalDetalleProps {
 }
 
 const ModalDetalleComponent: React.FC<ModalDetalleProps> = ({ visible, onClose, imagenSrc, descripcion, titulo }) => {
+  const getImageStyle = () => {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth > 768) {
+      return {
+        height: '300px',
+        objectFit: 'cover',
+        marginBottom: '16px',
+      } as React.CSSProperties;
+    } else {
+      return {
+        width: '100%', // Ajuste para dispositivos móviles
+        height: 'auto',
+        objectFit: 'contain',
+        marginBottom: '16px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        display: 'block',
+      } as React.CSSProperties;
+    }
+  };
+
   return (
     <Modal
       visible={visible}
@@ -24,9 +46,11 @@ const ModalDetalleComponent: React.FC<ModalDetalleProps> = ({ visible, onClose, 
         <img
           src={imagenSrc}
           alt={titulo}
-          style={{ width: '70%', maxWidth: '400px', height: '300px', borderRadius: '10px', marginBottom: '16px' }}
+          style={getImageStyle()}
         />
-        <p>{descripcion}</p>
+        <p style={{ fontSize: getImageStyle().height === 'auto' ? '1em' : '1.2em' }}>
+          {descripcion}
+        </p>
         <Button type="primary" onClick={onClose} style={{ marginTop: '16px', backgroundColor: 'rgb(35, 46, 58)' }}>
           Cerrar
         </Button>

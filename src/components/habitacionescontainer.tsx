@@ -21,7 +21,7 @@ const HabitacionesContainer: React.FC = () => {
     // Simulación de carga de datos desde una API
     const fetchData = async () => {
       // Puedes reemplazar esto con tu lógica para obtener datos de la API
-      const data = await fetch('http://localhost:3000/habitaciones').then(response => response.json());
+      const data = await fetch('http://localhost:3001/habitaciones').then(response => response.json());
       setHabitaciones(data);
     };
 
@@ -72,7 +72,7 @@ const HabitacionesContainer: React.FC = () => {
       {/* Pie de página */}
       <div style={{ backgroundColor: '#333', color: '#fff', textAlign: 'center', padding: '20px' }}>
         <p style={{ margin: '0', fontSize: '1.2em' }}>Hostería Capillapamba</p>
-        <p style={{ margin: '0', fontSize: '0.9em' }}>Copyright © 2023, Creado por [Pedro Pulgarin y Steven Fernandez]</p>
+        <p style={{ margin: '0', fontSize: '0.9em' }}>Copyright © 2023, Powered by Pedro Pulgarin y Steven Fernandez</p>
       </div>
     </div>
   )

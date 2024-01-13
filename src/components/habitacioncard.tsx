@@ -47,10 +47,11 @@ const HabitacionCard: React.FC<HabitacionCardProps> = ({ habitacion, onReservarC
 
   return (
     <Card
+      className="habitacion-card" // Clase para facilitar estilos específicos
       hoverable
       style={{
-        width: '87%',
-        margin: '16px 0',
+        width: '90%',
+        margin: '40px 0',
         marginLeft: '1%',
         fontFamily: 'Pacifico, sans-serif', // Establece el tipo de letra aquí
       }}
@@ -60,11 +61,11 @@ const HabitacionCard: React.FC<HabitacionCardProps> = ({ habitacion, onReservarC
           <img
             alt={habitacion.nombreHabitacion}
             src={habitacion.imagenUrl}
-            style={{ height: '300px', width: '400px', objectFit: 'cover', marginLeft: '110px' }}
+            style={{ width: '100%', height: '260px', objectFit: 'cover' }}
           />
         </div>
-        <div style={{ textAlign: 'left', marginLeft: '189px', width: '50%', fontFamily: 'Lato, sans-serif' }}>
-          <h3 style={{ fontSize: '40px', marginBottom: '8px' }}>{habitacion.nombreHabitacion}</h3>
+        <div style={{ textAlign: 'left', marginLeft: '70px', width: '50%', fontFamily: 'Lato, sans-serif' }}>
+          <h3 style={{ fontSize: '30px', marginBottom: '8px' }}>{habitacion.nombreHabitacion}</h3>
           <p style={{ fontSize: '16px' }}><strong>Descripción:</strong> {habitacion.descripcion}</p>
           <p style={{ fontSize: '16px' }}><strong>Capacidad:</strong> {habitacion.capacidad} personas</p>
           <p style={{ fontSize: '16px' }}><strong>Disponibilidad:</strong> {habitacion.disponible ? 'Disponible' : 'No disponible'}</p>

@@ -3,17 +3,15 @@ import RedSocialCard from '../components/RedsocialCard';
 
 
 import facebookQR from '../images/facebook.png';
-import instagramQR from '../images/instragram.png';
-import whatsappQR from '../images/whatsapp.png';
+import instagramQR from '../images/instagram.png';
+import whatsappQR from '../images/whatsapp (2).png';
 import tiktokQR from '../images/tiktok.png';
 
 const Contactos: React.FC = () => {
   return (
     <div className="contactos-page-container">
       <div className="contactos-content">
-        <h2>
-          Para mayor información, puedes seguirnos en nuestras redes sociales y así mantenerte informado de todo con relación a nosotros.
-        </h2>
+        
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
           <RedSocialCard nombre="Facebook" url="https://www.facebook.com/people/Hostería-Capillapamba/61552261378723/?mibextid=9R9pXO" qrCodeImagePath={facebookQR} />
           <RedSocialCard nombre="Instagram" url="https://www.instagram.com/capillapamba?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" qrCodeImagePath={instagramQR} />
@@ -28,7 +26,7 @@ const Contactos: React.FC = () => {
       {/* Pie de página */}
       <div className="footer" style={{ backgroundColor: '#333', color: '#fff', textAlign: 'center', padding: '20px' }}>
         <p style={{ margin: '0', fontSize: '1.2em' }}>Hostería Capillapamba</p>
-        <p style={{ margin: '0', fontSize: '0.9em' }}>Copyright © 2023, Creado por [Pedro Pulgarin y Steven Fernandez]</p>
+        <p style={{ margin: '0', fontSize: '0.9em' }}>Copyright © 2023, Powered by Pedro Pulgarin y Steven Fernandez</p>
       </div>
     </div>
   );

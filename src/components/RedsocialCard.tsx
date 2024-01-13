@@ -20,7 +20,7 @@ const RedSocialCard: React.FC<RedSocialProps> = ({ nombre, url, qrCodeImagePath 
       case 'whatsapp':
         return <WhatsAppOutlined />;
       case 'tiktok':
-        return <ToTopOutlined/>;
+        return <ToTopOutlined />;
       default:
         return null;
     }
@@ -29,12 +29,13 @@ const RedSocialCard: React.FC<RedSocialProps> = ({ nombre, url, qrCodeImagePath 
   return (
     <Card
       hoverable
-      style={{ width: 240, margin: '10px', textAlign: 'center' }}
-      cover={<img alt={`${nombre} QR Code`} src={qrCodeImagePath} style={{ width: '200px', height: '200px', margin: '0 auto' }} />}
+      className="red-social-card"
+      style={{ width: '90%', maxWidth: '300px', margin: '10px auto', textAlign: 'center' }}
+      cover={<img alt={`${nombre} QR Code`} src={qrCodeImagePath} style={{ width: '100%', height: 'auto', margin: '0 auto' }} />}
     >
       {getIconComponent()}
       <Meta title={nombre} description={`Síguenos en ${nombre}`} />
-      <a href={url} className={`social-button ${nombre.toLowerCase()}`} style={{ display: 'block', marginTop: '10px', padding: '10px', backgroundColor: '#1890ff', color: '#fff', borderRadius: '4px', textDecoration: 'none' }}>
+      <a href={url} className={`social-button ${nombre.toLowerCase()}`} style={{ display: 'block', marginTop: '10px', padding: '10px', background: 'rgb(35, 46, 58)', borderRadius: '4px', textDecoration: 'none' }}>
         Síguenos
       </a>
     </Card>
